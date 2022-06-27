@@ -20,12 +20,13 @@ export const Contact = (props) => {
     console.log(name, email, message)
     emailjs
       .sendForm(
-        'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.target, 'YOUR_USER_ID'
+        'service_7xfdk0z', 'template_cjwtxxx', e.target, '8EwG48N66pa8g_ffc'
       )
       .then(
         (result) => {
           console.log(result.text)
           clearState()
+          alert("Thanks you! Your feedback has been sent successfully");
         },
         (error) => {
           console.log(error.text)
@@ -150,10 +151,7 @@ export const Contact = (props) => {
       <div id='footer'>
         <div className='container text-center'>
           <p>
-            &copy; 2020 Issaaf Kattan React Land Page Template. Design by{' '}
-            <a href='http://www.templatewire.com' rel='nofollow'>
-              TemplateWire
-            </a>
+            &copy; 2022 Zalo NFT Team. All rights reserved
           </p>
         </div>
       </div>
