@@ -1,4 +1,4 @@
-body{
+body {
   color: white !important;
   background-color: #000000 !important;
 }
@@ -84,7 +84,6 @@ hr {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.21);
 }
 
-
 #menu a.navbar-brand {
   font-family: "Raleway", sans-serif;
   font-size: 24px;
@@ -101,7 +100,7 @@ hr {
   padding: 8px 2px;
   border-radius: 0;
   margin: 9px 20px 0;
-  -moz-text-decoration-style:;
+  -moz-text-decoration-style: ;
 }
 #menu.navbar-default .navbar-nav > li > a:after {
   display: block;
@@ -151,8 +150,8 @@ hr {
 }
 .section-title h2 {
   position: relative;
-  margin-top: 10px;
-  margin-bottom: 15px;
+  margin-top: 40px;
+  margin-bottom: 10px;
   padding-bottom: 15px;
 }
 .section-title h2::after {
@@ -213,9 +212,9 @@ a:focus,
 .intro {
   display: table;
   width: 100%;
-  height: 100%;
+  height: 125%;
   padding: 0;
-  background: url(../img/background_intro.jpg) center center no-repeat;
+  background: url(../img/background.jpg) center center no-repeat;
   background-color: #e5e5e5;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -223,7 +222,7 @@ a:focus,
   -o-background-size: cover;
 }
 .intro .overlay {
-  background: rgba(0, 0, 0, 0.2);
+  /* background: rgba(0, 0, 0, 0.2); */
 }
 .intro h1 {
   font-family: "Raleway", sans-serif;
@@ -253,12 +252,17 @@ header .intro-text {
 }
 /* Features Section */
 #features {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0;
   background: #000000;
   color: white !important;
 }
-.feature-text{
+.feature-text {
   color: white;
-  padding-top: 10%;
 }
 #features i.fa {
   font-size: 38px;
@@ -321,10 +325,54 @@ header .intro-text {
 }
 /* Services Section */
 #services {
-  padding: 100px 0;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
+  width: 100%;
+  height: 100%;
+  margin: 10px 0px;
+  /* background: linear-gradient(to right, #000000 0%, #000000 100%); */
   color: #fff;
+  padding: 100px 0;
 }
+
+.uploadcare--widget__button {
+  padding: 20% 310px !important;
+  background-color: #000000 !important;
+  border: 3px dashed #4000ff;
+  border-radius: 20px;
+  font-family: Sans-serif !important;
+  font-weight: 600 !important;
+  width: 100% !important;
+  height: 80%;
+  font-size: 20px !important;
+  margin: 7% 0;
+  color: #1bff0b;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.uploadcare--widget__button:hover {
+  background-color: rgb(46, 43, 64) !important;
+  padding: 20px;
+
+  border: 3px dashed #4000ff;
+  border-radius: 20px;
+  font-family: Sans-serif;
+  font-weight: 1000 !important;
+  width: 800px !important;
+  height: 80%;
+  font-size: 20px;
+  margin: 7% 0;
+  color: #1bff0b;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+#force-css {
+  top: 100px;
+}
+
 #services .service-desc {
   margin: 10px 10px 20px;
 }
@@ -338,7 +386,7 @@ header .intro-text {
   height: 4px;
   width: 60px;
   bottom: 0;
-  margin-left: -30px;
+  /* margin-left: -30px; */
   left: 50%;
 }
 #services i.fa {
@@ -365,6 +413,14 @@ header .intro-text {
 /* Portfolio Section */
 #portfolio {
   padding: 100px 0;
+  display: table;
+  /* background: url(../img/team.gif) center center no-repeat; */
+  width: 100%;
+  height: 100%;
+  /* -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover; */
 }
 .portfolio-item {
   margin: 1px -15px 0 -14px;
@@ -453,6 +509,10 @@ header .intro-text {
 }
 /* Team Section */
 #team {
+  display: table;
+  width: 100%;
+  height: 100%;
+  background: url(../img/team.gif) center center no-repeat;
   padding: 100px 0;
 }
 #team h4 {
@@ -463,12 +523,18 @@ header .intro-text {
   height: 240px;
 }
 #team .thumbnail {
-  background: transparent;
-  border: 0;
+  background: black;
+  border: 2%;
+  border-radius: 13px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  -ms-border-radius: 13px;
+  -o-border-radius: 13px;
 }
 #team .thumbnail .caption {
-  padding: 10px 0 0;
-  color: #888;
+  padding: 2px 0 0;
+  font-weight: 600;
+  color: rgb(162, 255, 0);
 }
 /* Contact Section */
 #contact {
