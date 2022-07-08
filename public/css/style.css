@@ -254,6 +254,7 @@ header .intro-text {
 #features {
   width: 100%;
   height: 100%;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -324,16 +325,27 @@ header .intro-text {
   margin: 30px 0;
 }
 /* Services Section */
-#services {
+/* #services {
   width: 100%;
   height: 100%;
   margin: 10px 0px;
-  /* background: linear-gradient(to right, #000000 0%, #000000 100%); */
+  background: linear-gradient(to right, #000000 0%, #000000 100%); 
   color: #fff;
   padding: 100px 0;
 }
+ */
 
-.uploadcare--widget__button {
+#services {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 10px 0px;
+  background: linear-gradient(to right, #000000 0%, #000000 100%);
+  color: #fff;
+  padding: 100px 0;
+}
+/* .uploadcare--widget__button {
   padding: 20% 310px !important;
   background-color: #000000 !important;
   border: 3px dashed #4000ff;
@@ -349,9 +361,41 @@ header .intro-text {
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
+} */
+.uploadcare--widget {
+  display: flex;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
 }
 
-.uploadcare--widget__button:hover {
+.uploadcare--widget__button {
+  padding: 25% 0%!important;
+  background-color: #000000 !important;
+  border: 3px dashed #4000ff;
+  border-radius: 20px;
+  font-family: Sans-serif !important;
+  font-weight: 600 !important;
+  width: 80% !important;
+  height: 80%;
+  font-size: 20px !important;
+  /* margin: 7% 0; */
+  color: #1bff0b;
+  text-align: justify;
+  -webkit-border-radius: 20px;
+  text-align: center !important;
+  vertical-align: middle !important;
+  display: flex;
+  margin: auto;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-flow: wrap;
+  min-width: 190px;
+}
+
+/* .uploadcare--widget__button:hover {
   background-color: rgb(46, 43, 64) !important;
   padding: 20px;
 
@@ -368,6 +412,31 @@ header .intro-text {
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
+} */
+.uploadcare--widget__button:hover {
+  padding: 25% 10%!important;
+  background-color: rgb(46, 43, 64) !important;
+  border: 3px dashed #4000ff;
+  border-radius: 20px;
+  font-family: Sans-serif !important;
+  font-weight: 600 !important;
+  width: 80% !important;
+  height: 80%;
+  font-size: 20px !important;
+  /* margin: 7% 0; */
+  color: #1bff0b;
+  text-align: justify;
+  -webkit-border-radius: 20px;
+  text-align: center !important;
+  vertical-align: middle !important;
+  display: flex;
+  margin: auto;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-flow: wrap;
+  min-width: 190px;
 }
 #force-css {
   top: 100px;
