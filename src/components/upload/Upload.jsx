@@ -42,7 +42,7 @@ const Upload = () => {
     try {
       console.log("Upload Image", file);
       const formData = new FormData();
-      formData.append("file", file);
+      formData.append("data", file);
 
       const config = {
         headers: {
@@ -53,7 +53,8 @@ const Upload = () => {
       const host = process.env.REACT_APP_HOST
       const url = `${host}/${api}`
 
-      await axios.post(url, formData, config).then(result => {
+
+      await axios.post(url, formData, config, { timeout: 90000 }).then(result => {
         console.log("Result: ", result.data.result);
         setLoading(false)
         setData(result.data.result)
@@ -61,6 +62,9 @@ const Upload = () => {
 
       setRecieveResponse(true)
     } catch (error) {
+      setLoading(false)
+      setData(null)
+      alert("Server maintenance !!!")
       console.error(error);
     }
   };

@@ -79,14 +79,17 @@ export const ImagesList = ({ documents }) => {
                 position: 'absolute',
                 top: 0,
                 left: 0,
-                color: 'white',
-                background: 'rgba(0,0,0, .3)',
-                p: '5px',
-                fontSize: '10px',
-                borderTopRightRadius: 8,
+                color: 'blue',
+                textShadow: '3px 3px yellow',
+                background: 'rgba(1,0,0, .3)',
+                fontSize: '25px',
+                fontWeight: '1000',
+                p: '10px',
+                borderBottomRightRadius: 20,
               }}
             >
-              {moment(item?.data?.timestamp?.toDate()).fromNow()}
+              {/* {moment(item?.data?.timestamp?.toDate()).fromNow()} */}
+              RANK:  {index + 1}
             </Typography>
             <Typography
               variant="body2"
@@ -98,7 +101,7 @@ export const ImagesList = ({ documents }) => {
                 color: 'black',
                 textShadow: '2px 2px yellow',
                 background: 'rgba(0,0,0, .3)',
-                fontSize: '25px',
+                fontSize: '17px',
                 fontWeight: '1000',
                 p: '20px',
                 borderTopLeftRadius: 20,

@@ -214,8 +214,9 @@ a:focus,
   width: 100%;
   height: 125%;
   padding: 0;
-  background: url(../img/background.jpg) center center no-repeat;
-  background-color: #e5e5e5;
+  /* background: url(../img/background.jpg) center center no-repeat; */
+  background: url(../img/team.gif) center center no-repeat;
+  /* background-color: #e5e5e5; */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -367,12 +368,22 @@ header .intro-text {
   vertical-align: middle;
   justify-content: center;
   align-items: center;
+  margin: 5% 5%;
+  padding: 1% 1%;
+  /* background-color: currentColor; */
+  border-radius: 22px;
+  border: 5px solid black;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+ 
 }
 
+
+
 .uploadcare--widget__button {
-  padding: 25% 0%!important;
+  padding: 15% 0%!important;
   background-color: #000000 !important;
-  border: 3px dashed #4000ff;
+  border: 3px solid #4000ff;
   border-radius: 20px;
   font-family: Sans-serif !important;
   font-weight: 600 !important;
@@ -414,9 +425,9 @@ header .intro-text {
   -o-border-radius: 20px;
 } */
 .uploadcare--widget__button:hover {
-  padding: 25% 10%!important;
+  padding: 15% 10%!important;
   background-color: rgb(46, 43, 64) !important;
-  border: 3px dashed #4000ff;
+  border: 3px solid #4000ff;
   border-radius: 20px;
   font-family: Sans-serif !important;
   font-weight: 600 !important;
@@ -581,7 +592,8 @@ header .intro-text {
   display: table;
   width: 100%;
   height: 100%;
-  background: url(../img/team.gif) center center no-repeat;
+  /* background: url(../img/team.gif) center center no-repeat; */
+  background-size: cover;
   padding: 100px 0;
 }
 #team h4 {
