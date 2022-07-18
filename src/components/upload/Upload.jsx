@@ -11,6 +11,7 @@ import {
 import Effects from "uploadcare-widget-tab-effects";
 import { Widget } from "@uploadcare/react-widget";
 import { useState } from 'react';
+
 // import { useAuth } from '../../context/AuthContext';
 // import { Image } from 'mui-image'
 // import SubmitButton from './SubmitButton';
@@ -25,7 +26,9 @@ import { useEffect } from 'react';
 import axios from "axios";
 import { ImagesList } from '../imagesList/ImagesList';
 import Spinner from '../loader/Spinner';
-
+function blobToFile(theBlob, fileName) {
+  return new File([theBlob], fileName, { lastModified: new Date().getTime(), type: "image/jpg" })
+}
 const Upload = () => {
   // const { currentUser, setLoading, setAlert, modal, setModal } = useAuth();
   // const [name, setName] = useState(currentUser?.displayName);
@@ -46,12 +49,15 @@ const Upload = () => {
 
       const config = {
         headers: {
+
+          "accept": "application/json",
           "content-type": "multipart/form-data"
         }
       };
       const api = process.env.REACT_APP_API
       const host = process.env.REACT_APP_HOST
       const url = `${host}/${api}`
+
 
 
       await axios.post(url, formData, config, { timeout: 90000 }).then(result => {
@@ -73,10 +79,26 @@ const Upload = () => {
     window.location.href = "/";
   }
 
-  const handleChange = async (file) => {
-    file = file.sourceInfo.file
-    console.log(file)
-    if (file) {
+  const handleChange = async (file, fileUrlCdn) => {
+    // file = file.sourceInfo.file
+    if (file === undefined) {
+      fetch(fileUrlCdn)
+        .then(response => response.blob())
+        .then(async imageBlob => {
+          file = blobToFile(imageBlob, fileUrlCdn + "uploaded.jpg");
+          console.log("File Image: " + file)
+          setFile(file);
+          setPhotoURL(URL.createObjectURL(file));
+          setOpenCrop(true);
+          await uploadImage(file);
+        });
+
+
+    }
+
+
+    else {
+      console.log("File XXX: " + file)
       setFile(file);
       setPhotoURL(URL.createObjectURL(file));
       setOpenCrop(true);
@@ -171,16 +193,24 @@ const Upload = () => {
           onFileSelect={(file) => {
             console.log('File changed: ', file)
 
-            if (file) {
 
-              file.progress(info => {
-                console.log('File progress: ', info.progress)
-                setLoading(true)
-              })
-              file.done(info => console.log('File uploaded: ', info))
+            if (!file) {
+              console.log("File removed from widget");
+              return;
             }
+            file.progress(info => {
+              console.log('File progress: ', info.progress)
+              setLoading(true)
+            })
+
+
+            file.done((fileInfo) => {
+              console.log("File uploaded: ", fileInfo);
+              setFile(fileInfo.cdnUrl);
+              handleChange(fileInfo.sourceInfo.file, fileInfo.cdnUrl)
+            });
           }}
-          onChange={handleChange}
+        //   onChange={handleChange}
         />) :
           (<Box>
             <Box sx={{

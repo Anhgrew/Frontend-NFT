@@ -12,6 +12,7 @@
     "@uploadcare/react-widget": "2.1.2",
     "axios": "^0.27.2",
     "emailjs-com": "^2.6.4",
+    "fetch": "^1.1.0",
     "framer-motion": "^6.4.2",
     "moment": "^2.29.3",
     "npm": "^8.11.0",
