@@ -40,7 +40,6 @@ const Upload = () => {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(false)
 
-
   const uploadImage = async file => {
     try {
       console.log("Upload Image", file);

@@ -23,6 +23,8 @@ export const ImagesList = ({ documents }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
 
+
+
   return (
     <div>
       <ImageList variant="quilted" cols={4} rowHeight={200}>
@@ -88,6 +90,7 @@ export const ImagesList = ({ documents }) => {
                 borderBottomRightRadius: 20,
               }}
             >
+        
               {/* {moment(item?.data?.timestamp?.toDate()).fromNow()} */}
               RANK:  {index + 1}
             </Typography>
@@ -98,16 +101,18 @@ export const ImagesList = ({ documents }) => {
                 position: 'absolute',
                 bottom: 0,
                 right: 0,
-                color: 'black',
-                textShadow: '2px 2px yellow',
+                color: 'yellow',
+                textShadow: '4px 4px 3px black',
                 background: 'rgba(0,0,0, .3)',
-                fontSize: '17px',
+                fontSize: '14px',
                 fontWeight: '1000',
-                p: '20px',
+                p: '12px',
                 borderTopLeftRadius: 20,
               }}
+
             >
-              Price: {Math.abs(item?.price) }00 $
+            
+              Price: {Math.abs(item?.price)}00 $ 
             </Typography>
             {/* <Tooltip
               title={item?.data?.uName || item?.data?.uEmail?.split('@')[0]}
@@ -151,7 +156,7 @@ export const ImagesList = ({ documents }) => {
               (photoIndex + documents.length - 1) % documents.length
             )
           }
-          imageTitle={"Name: " + documents[photoIndex]?.meta_name + " - Lastsale Price: " + Math.abs(documents[photoIndex]?.lastsale_price)*1000 + "$"}
+          imageTitle={"Name: " + documents[photoIndex]?.meta_name + " - Lastsale Price: " + Math.abs(documents[photoIndex]?.lastsale_price) * 1000 + "$"}
           imageCaption={documents[photoIndex]?.meta_description}
 
         />

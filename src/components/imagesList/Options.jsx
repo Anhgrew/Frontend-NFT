@@ -4,8 +4,9 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Tooltip from '@mui/material/Tooltip';
-import { IconButton } from '@mui/material';
-import { Delete, Download, MoreVert } from '@mui/icons-material';
+import { Button, IconButton } from '@mui/material';
+import { ForwardRounded, Download, MoreVert } from '@mui/icons-material';
+
 // import deleteDocument from '../../firebase/deleteDocument';
 // import deleteFile from '../../firebase/deleteFile';
 // import { useAuth } from '../../context/AuthContext';
@@ -35,7 +36,9 @@ export default function Options({ imageId, uid, imageURL }) {
       console.log(error);
     }
   };
-
+  const openInNewTab = url => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
   const handleDownload = async () => {
     try {
       const response = await fetch(imageURL);
@@ -61,7 +64,7 @@ export default function Options({ imageId, uid, imageURL }) {
   return (
     <React.Fragment>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-        <Tooltip title="Download">
+        <Tooltip title="Download or Go to NFT Marketplace">
           <IconButton
             onClick={handleClick}
             sx={{
@@ -113,9 +116,18 @@ export default function Options({ imageId, uid, imageURL }) {
         <MenuItem onClick={handleDownload}>
           <ListItemIcon>
             <Download />
+
           </ListItemIcon>
+
           Download
         </MenuItem>
+        <MenuItem onClick={() => openInNewTab('https://rarible.com/token/' + imageId.slice(imageId.indexOf(":") + 1, imageId.length))} >
+          <ListItemIcon>
+            <ForwardRounded />
+          </ListItemIcon>
+          Go to NFT MarketPlace
+        </MenuItem>
+
         {/* {currentUser?.uid === uid && ( */}
         {/* <MenuItem onClick={handleDelete}>
             <ListItemIcon>
