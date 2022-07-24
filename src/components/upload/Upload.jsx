@@ -59,7 +59,7 @@ const Upload = () => {
 
 
 
-      await axios.post(url, formData, config, { timeout: 90000 }).then(result => {
+      await axios.post(url, formData, config, { timeout: 1500000 }).then(result => {
         console.log("Result: ", result.data.result);
         setLoading(false)
         setData(result.data.result)
