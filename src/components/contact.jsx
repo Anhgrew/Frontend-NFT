@@ -151,7 +151,7 @@ export const Contact = (props) => {
       <div id='footer'>
         <div className='container text-center'>
           <p>
-            &copy; 2022 Zalo NFT Team. All rights reserved
+            &copy; 2022 NFT Verifier Team. All rights reserved
           </p>
         </div>
       </div>

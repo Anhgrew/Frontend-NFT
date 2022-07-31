@@ -1,18 +1,18 @@
 import { Image } from "./image";
-
+import Iframe from 'react-iframe'
 export const Gallery = (props) => {
   return (
+    // <div id='portfolio' className='text-center'>
+    //   <div className='container'>
+    //     <div className='section-title'>
+    //      
+
+
+
+    //     </div>
     <div id='portfolio' className='text-center'>
-      <div className='container'>
-        <div className='section-title'>
-          <h2>Highlight</h2>
-          {/* <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed
-            dapibus leonec.
-          </p> */}
-        </div>
-        <div className='row'>
-          <div className='portfolio-items'>
+      <h2>Highlight</h2>
+      {/* <div className='portfolio-items'>
             {props.data
               ? props.data.map((d, i) => (
                 <div key={`${d.title}-${i}`} className='col-sm-6 col-md-4 col-lg-4'>
@@ -20,9 +20,22 @@ export const Gallery = (props) => {
                 </div>
               ))
               : 'Loading...'}
-          </div>
-        </div>
-      </div>
+             
+          </div> */}
+     
+        <Iframe
+          url="https://www.youtube.com/embed/k5qE2jIriO8"
+          width="65%"
+          height="90%"
+          display="initial"
+          position="relative"
+          frameBorder="1"
+          allowFullScreen
+          allow="autoplay; encrypted-media"
+        />
+     
+      {/* </div>
+      </div> */}
     </div>
   )
 }
