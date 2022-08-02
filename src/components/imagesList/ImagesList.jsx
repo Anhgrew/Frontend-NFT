@@ -42,7 +42,7 @@ export const ImagesList = ({ documents }) => {
               ].rows
             }
             sx={{
-              opacity: '.8',
+              opacity: '.94',
               transition: 'opacity .3s linear',
               cursor: 'pointer',
               padding: '2px',

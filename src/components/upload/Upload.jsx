@@ -223,7 +223,7 @@ const Upload = () => {
               margin: '32px 0px',
               padding: '4px'
             }}>
-              <Button variant="outlined" color="warning" size="large" fullWidth="true" onClick={reset}> <h5>Retry</h5></Button>
+              <Button variant="outlined" color="danger" size="large" fullWidth="true" onClick={reset}> <h5>Retry</h5></Button>
             </Box>
           </Box>
           )
