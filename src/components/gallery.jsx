@@ -24,12 +24,12 @@ export const Gallery = (props) => {
           </div> */}
      
         <Iframe
-          url="https://www.youtube.com/embed/k5qE2jIriO8"
+          url="https://www.youtube.com/embed/XUDLRw6MP28"
           width="65%"
           height="90%"
           display="initial"
           position="relative"
-          frameBorder="1"
+          frameBorder="0"
           allowFullScreen
           allow="autoplay; encrypted-media"
         />
