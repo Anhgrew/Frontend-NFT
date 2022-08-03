@@ -22,7 +22,7 @@ export const Download = props => {
                 </ul> */}
 
                 <div class="qr-code">
-                    <img width="120px" height="120px" title='Scan to use' src="https://res.cloudinary.com/dulzt2rsl/image/upload/v1659495212/vst3mfupmcn0vc92mjuo.png" alt="images_qrcode" />
+                    <img width="130px" height="130px" title='Scan to use' src="https://res.cloudinary.com/dulzt2rsl/image/upload/v1659495212/vst3mfupmcn0vc92mjuo.png" alt="images_qrcode" />
                 </div>
                
             </div>

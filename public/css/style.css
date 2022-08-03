@@ -359,6 +359,11 @@ header .intro-text {
   -o-border-radius: 10%;
   padding: 12px 12px 0 12px;
 }
+.uploadcare--dialog__powered-by {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  display: none;
+}
 .qr-text{
   text-align: center;
   color: #00ff88;

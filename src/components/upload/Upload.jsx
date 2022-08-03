@@ -11,7 +11,6 @@ import {
 import Effects from "uploadcare-widget-tab-effects";
 import { Widget } from "@uploadcare/react-widget";
 import { useState } from 'react';
-
 // import { useAuth } from '../../context/AuthContext';
 // import { Image } from 'mui-image'
 // import SubmitButton from './SubmitButton';
@@ -39,16 +38,13 @@ const Upload = () => {
   const [recieveResponse, setRecieveResponse] = useState(false)
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(false)
-
   const uploadImage = async file => {
     try {
       console.log("Upload Image", file);
       const formData = new FormData();
       formData.append("data", file);
-
       const config = {
         headers: {
-
           "accept": "application/json",
           "content-type": "multipart/form-data"
         }
@@ -59,12 +55,11 @@ const Upload = () => {
 
 
 
-      await axios.post(url, formData, config, { timeout: 1500000 }).then(result => {
+      await axios.post(url, formData, config, { timeout: 90000 }).then(result => {
         console.log("Result: ", result.data.result);
         setLoading(false)
         setData(result.data.result)
       })
-
       setRecieveResponse(true)
     } catch (error) {
       setLoading(false)
@@ -73,11 +68,9 @@ const Upload = () => {
       console.error(error);
     }
   };
-
   const reset = () => {
     window.location.href = "/";
   }
-
   const handleChange = async (file, fileUrlCdn) => {
     // file = file.sourceInfo.file
     if (file === undefined) {
@@ -91,11 +84,7 @@ const Upload = () => {
           setOpenCrop(true);
           await uploadImage(file);
         });
-
-
     }
-
-
     else {
       console.log("File XXX: " + file)
       setFile(file);
@@ -103,63 +92,7 @@ const Upload = () => {
       setOpenCrop(true);
       await uploadImage(file);
     }
-
   };
-
-  // // const handleSubmit = async (e) => {
-  // //   e.preventDefault();
-  //   // setLoading(true);
-
-  //   // let userObj = { displayName: name };
-  //   // let imagesObj = { uName: name };
-  //   try {
-  //     if (file) {
-  //       const imageName = uuidv4() + '.' + file?.name?.split('.')?.pop();
-  //       console.log(imageName)
-  //       // const url = await uploadFile(
-  //       //   file,
-  //       //   `profile/${currentUser?.uid}/${imageName}`
-  //       // );
-
-  //       // if (currentUser?.photoURL) {
-  //       //   const prevImage = currentUser?.photoURL     ?.split(`${currentUser?.uid}%2F`)[1]
-  //       //     .split('?')[0];
-  //       //   if (prevImage) {
-  //       //     try {
-  //       //       await deleteFile(`profile/${currentUser?.uid}/${prevImage}`);
-  //       //     } catch (error) {
-  //       //       console.log(error);
-  //       //     }
-  //       //   }
-  //       // }
-
-  //       // userObj = { ...userObj, photoURL: url };
-  //       // imagesObj = { ...imagesObj, uPhoto: url };
-  //     }
-
-  //     // await updateProfile(currentUser, userObj);
-  //     // await updateUserRecords('gallery', currentUser?.uid, imagesObj);
-
-  //     // setAlert({
-  //     //   isAlert: true,
-  //     //   severity: 'success',
-  //     //   message: 'Your profile has been updated',
-  //     //   timeout: 3000,
-  //     //   location: 'modal',
-  //     // });
-  //   } catch (error) {
-  //     // setAlert({
-  //     //   isAlert: true,
-  //     //   severity: 'error',
-  //     //   message: error.message,
-  //     //   timeout: 5000,
-  //     //   location: 'modal',
-  //     // });
-  //     console.log(error);
-  //   }
-
-  //   // setLoading(false);
-  // };
 
   useEffect(() => {
     if (openCrop) {
@@ -168,10 +101,8 @@ const Upload = () => {
       // setModal({ ...modal, title: 'Update Upload' });
     }
   }, [openCrop]);
-
   return (
     <div>
-
       {loading ? (<Spinner />) : (
         !recieveResponse ? (< Widget publicKey="demopublickey"
           id='file'
@@ -191,8 +122,6 @@ const Upload = () => {
           customTabs={{ preview: Effects }}
           onFileSelect={(file) => {
             console.log('File changed: ', file)
-
-
             if (!file) {
               console.log("File removed from widget");
               return;
@@ -201,8 +130,6 @@ const Upload = () => {
               console.log('File progress: ', info.progress)
               setLoading(true)
             })
-
-
             file.done((fileInfo) => {
               console.log("File uploaded: ", fileInfo);
               setFile(fileInfo.cdnUrl);
@@ -223,12 +150,11 @@ const Upload = () => {
               margin: '32px 0px',
               padding: '4px'
             }}>
-              <Button variant="outlined" color="danger" size="large" fullWidth="true" onClick={reset}> <h5>Retry</h5></Button>
+              <Button variant="contained" color="primary" size="large" fullWidth="false" onClick={reset}><h5>Retry</h5></Button>
             </Box>
           </Box>
           )
       )}
     </div>)
 };
-
 export default Upload;
