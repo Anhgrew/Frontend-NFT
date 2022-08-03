@@ -4,10 +4,11 @@ import React from 'react'
 
 export const Download = props => {
     return (
-
+        
         <div class="qrcode qrcode-pc">
+            
             <div class="main-qrcode d-flex">
-                <ul class="link-code">
+                {/*   <ul class="link-code">
                     <li class ="link-li">
                         <a href="https://play.google.com/store/apps/details?id=com.hitechhorizon.defiwarrior" class="img-code">
                             <img src="https://defiwarrior.io/wp-content/uploads/2022/06/gg-play-2.png" alt="images_gg" />
@@ -18,11 +19,14 @@ export const Download = props => {
                             <img src="https://defiwarrior.io/wp-content/uploads/2022/06/app-store.png" alt="images_app" />
                         </a>
                     </li>
-                </ul>
+                </ul> */}
+
                 <div class="qr-code">
-                    <img src="https://defiwarrior.io/wp-content/uploads/2022/06/DW-QR-2.png" alt="images_qrcode" />
+                    <img width="120px" height="120px" title='Scan to use' src="https://res.cloudinary.com/dulzt2rsl/image/upload/v1659495212/vst3mfupmcn0vc92mjuo.png" alt="images_qrcode" />
                 </div>
+               
             </div>
+            <div class="qr-text"> Scan to use</div>
         </div>
     )
 }

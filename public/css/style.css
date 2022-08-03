@@ -349,6 +349,23 @@ header .intro-text {
   opacity: 0.9;
   padding: 0;
 }
+
+.qrcode{
+  border: 8px solid #00bbff;
+  border-radius: 10%;
+  -webkit-border-radius: 10%;
+  -moz-border-radius: 10%;
+  -ms-border-radius: 10%;
+  -o-border-radius: 10%;
+  padding: 12px 12px 0 12px;
+}
+.qr-text{
+  text-align: center;
+  color: #00ff88;
+  text-shadow: 4px 2px 3px #0c0c0c;
+  font-size: 20px;
+  font-weight: 900;
+}
 /* .uploadcare--widget__button {
   padding: 20% 310px !important;
   background-color: #000000 !important;
@@ -773,7 +790,7 @@ label {
 
 .qrcode {
   position: fixed;
-  bottom: 30px;
+  bottom: 50px;
   right: 60px;
   z-index: 10;
 }
