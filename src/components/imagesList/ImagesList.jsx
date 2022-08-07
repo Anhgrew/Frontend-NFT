@@ -112,7 +112,7 @@ export const ImagesList = ({ documents }) => {
 
             >
             
-              Price: {Math.abs(item?.price)}00 $ 
+              Price: {Math.abs(item?.price)} $ 
             </Typography>
             {/* <Tooltip
               title={item?.data?.uName || item?.data?.uEmail?.split('@')[0]}
@@ -156,7 +156,7 @@ export const ImagesList = ({ documents }) => {
               (photoIndex + documents.length - 1) % documents.length
             )
           }
-          imageTitle={"Name: " + documents[photoIndex]?.meta_name + " - Lastsale Price: " + Math.abs(documents[photoIndex]?.lastsale_price) * 1000 + "$"}
+          imageTitle={"Name: " + documents[photoIndex]?.meta_name + " - Lastsale Price: " + Math.abs(documents[photoIndex]?.lastsale_price) + "$"}
           imageCaption={documents[photoIndex]?.meta_description}
 
         />
