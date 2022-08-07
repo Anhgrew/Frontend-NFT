@@ -73,6 +73,7 @@ export const ImagesList = ({ documents }) => {
                 setPhotoIndex(index);
                 setIsOpen(true);
               }}
+      
             />
             <Typography
               variant="body2"
@@ -111,8 +112,8 @@ export const ImagesList = ({ documents }) => {
               }}
 
             >
-            
-              Price: {Math.abs(item?.price)} $ 
+              {/* Price: {Math.abs(documents[photoIndex]?.lastsale_price) + " ETH"} */}
+              {/* Price: {Math.abs(item?.price)} $  */}
             </Typography>
             {/* <Tooltip
               title={item?.data?.uName || item?.data?.uEmail?.split('@')[0]}
@@ -156,7 +157,7 @@ export const ImagesList = ({ documents }) => {
               (photoIndex + documents.length - 1) % documents.length
             )
           }
-          imageTitle={"Name: " + documents[photoIndex]?.meta_name + " - Lastsale Price: " + Math.abs(documents[photoIndex]?.lastsale_price) + "$"}
+          imageTitle={"Name: " + documents[photoIndex]?.meta_name + " - Lastsale Price: " + Math.abs(documents[photoIndex]?.lastsale_price) + " ETH"}
           imageCaption={documents[photoIndex]?.meta_description}
 
         />
